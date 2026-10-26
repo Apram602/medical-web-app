@@ -1,4 +1,11 @@
 require('dotenv').config();
+
+// Fail fast if the token secret is missing instead of silently
+// falling back to a well-known placeholder value.
+const JWT_SECRET = process.env.JWT_SECRET;
+if (!JWT_SECRET) {
+    throw new Error('JWT_SECRET environment variable is not set. See .env.example.');
+}
 const express = require('express');
 const multer = require('multer');
 const { OpenAI } = require('openai');
@@ -68,7 +75,7 @@ const authenticateToken = (req, res, next) => {
     const token = req.headers['authorization']?.split(' ')[1];
     if (!token) return res.status(401).json({ message: 'Access denied' });
 
-    jwt.verify(token, process.env.JWT_SECRET || 'your_jwt_secret', (err, user) => {
+    jwt.verify(token, JWT_SECRET, (err, user) => {
         if (err) return res.status(403).json({ message: 'Invalid token' });
         req.user = user;
         next();
@@ -109,7 +116,7 @@ app.post('/api/auth/login', async (req, res) => {
             return res.status(401).json('Invalid email or password');
         }
 
-        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET || 'your_jwt_secret', { expiresIn: '1h' });
+        const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '1h' });
         res.json({ message: 'Login successful', token, userId: user.id });
     });
 });
@@ -163,7 +170,7 @@ app.post('/api/auth/signup', async (req, res) => {
             }
 
             const userId = result.insertId;
-            const token = jwt.sign({ id: userId }, process.env.JWT_SECRET || 'your_jwt_secret', { expiresIn: '1h' });
+            const token = jwt.sign({ id: userId }, JWT_SECRET, { expiresIn: '1h' });
             res.json({ message: 'Signup successful', token, userId });
         }
     );
@@ -461,8 +468,8 @@ app.post('/api/contact', authenticateToken, async (req, res) => {
   
         // Send email
         const mailOptions = {
-          from: 'docongo101@gmail.com', // Sender email
-          to: 'docongo001@gmail.com', // Receiver email (same as sender in this case)
+          from: process.env.EMAIL_USER, // Sender email
+          to: process.env.EMAIL_USER, // Receiver email (same as sender in this case)
           replyTo: userEmail, // User's email for replying
           subject: `New Contact Form Submission: ${subject}`,
           text: `
