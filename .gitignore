@@ -1,0 +1,24 @@
+# dependencies
+node_modules/
+
+# user-uploaded files (never commit these)
+uploads/
+backend/uploads/
+
+# environment files (never commit real secrets)
+.env
+
+# build output
+build/
+dist/
+
+# logs
+*.log
+
+# OS files
+.DS_Store
+
+# Cypress artifacts
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
