@@ -1,0 +1,152 @@
+.document-upload {
+    padding: 4rem 2rem;
+    background: #e6f0fa; /* Subtle light blue background */
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.document-upload h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.document-upload p {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.form-group::after {
+    content: 'Supported formats: PDF, Word (.docx), JPEG, PNG';
+    display: block;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+.image-preview {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.preview-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Add a loading spinner for the "Processing..." state */
+button:disabled::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.error {
+    color: #dc3545;
+    margin-top: 1rem;
+    font-size: 1rem;
+    background: #f8d7da;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.diagnosis {
+    margin-top: 2rem;
+    text-align: left;
+    border-left: 4px solid #007bff;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.diagnosis h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.diagnosis p {
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .document-upload {
+        padding: 2rem 1rem;
+    }
+
+    .document-upload h2 {
+        font-size: 1.5rem;
+    }
+
+    .preview-image {
+        max-width: 80%;
+    }
+}

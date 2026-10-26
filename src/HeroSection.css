@@ -1,0 +1,122 @@
+.hero {
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(240, 248, 255, 0.8)), url('./d.jpg') no-repeat center center;
+  background-size: cover;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-left: 200px;
+  background: transparent;
+}
+
+.user-profile {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.user-profile p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hero input {
+  padding: 12px;
+  margin: 5px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.hero input:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.hero button {
+  padding: 12px 24px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.hero button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffebee;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.diagnoses-results {
+  margin-top: 20px;
+  text-align: left;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.diagnoses-results h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.diagnoses-results p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .hero { padding: 30px 10px; }
+  .hero-content { max-width: 100%; padding: 1.5rem; margin-left: 0; }
+  .hero h2 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+}

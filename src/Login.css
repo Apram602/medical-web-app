@@ -1,0 +1,76 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f0f8ff, #e0f7fa);
+}
+
+.login-box {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #0056b3;
+}
+
+.login-box p {
+  text-align: center;
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.login-box p:hover {
+  text-decoration: underline;
+}
+
+.success {
+  color: #28a745;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .login-box { padding: 1.5rem; }
+  .login-box h2 { font-size: 1.5rem; }
+}
