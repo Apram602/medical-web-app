@@ -1,0 +1,258 @@
+/* AboutPage.css */
+.about-page {
+    padding: 2rem 0rem;
+    background: #f5f8fb;
+    min-height: 100vh;
+  }
+  
+  /* Mission Section */
+  .mission-section {
+    max-width: 1400px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .mission-content {
+    flex: 1;
+  }
+  
+  .mission-content h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .mission-content p {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .learn-more-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .learn-more-btn:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  .mission-image {
+    flex: 0 0 300px;
+  }
+  
+  .mission-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Serve Community Section */
+  .serve-section {
+    max-width: 1400px;
+    margin: 0 auto 3rem auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .serve-section h2 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+  
+  .serve-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+  }
+  
+  .serve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .serve-card {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .serve-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .serve-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+  
+  .serve-card h3 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+  
+  .serve-card p {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+  }
+  
+  .learn-more {
+    display: inline-block;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .learn-more:hover {
+    text-decoration: underline;
+  }
+  
+  /* Video Section with Container */
+  .video-container {
+    max-width: 1450px;
+    margin: 0 auto 3rem auto;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+  
+  .video-section {
+    position: relative;
+    width: 100%;
+    height: 450px; /* Fixed height */
+    background: linear-gradient(135deg, #007bff 0%, #1a3c34 100%); /* Fallback gradient */
+    
+   
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .video-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+  
+  .quote {
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    font-style: italic;
+    max-width: 800px;
+  }
+  
+  /* Join Us Section */
+  .join-section {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    background: #1a3c34;
+    text-align: center;
+  
+  /* Ensure separation from video */
+  }
+  
+  .join-section h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  
+  .join-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: white;
+    color: #1a3c34;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  .join-btn:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .mission-section {
+      flex-direction: column;
+      text-align: center;
+    }
+    .mission-image {
+      flex: 0 0 200px;
+    }
+    .mission-image img {
+      height: 200px;
+    }
+    .mission-content h1 {
+      font-size: 2rem;
+    }
+    .mission-content p {
+      font-size: 1rem;
+    }
+    .serve-section h2 {
+      font-size: 2rem;
+    }
+    .serve-subtitle {
+      font-size: 1rem;
+    }
+    .serve-card img {
+      height: 150px;
+    }
+    .video-container {
+      height: 300px; /* Adjusted height for mobile */
+    }
+    .video-section {
+      height: 300px;
+    }
+    .quote {
+      font-size: 1.4rem;
+      padding: 1rem;
+    }
+    .join-section h2 {
+      font-size: 1.5rem;
+    }
+    .join-btn {
+      padding: 0.6rem 1.5rem;
+      font-size: 1rem;
+    }
+  }

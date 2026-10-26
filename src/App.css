@@ -1,0 +1,77 @@
+.section-wrapper {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  position: relative;
+}
+
+/* App.css */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  background: #1a3c34;
+  color: white;
+  padding: 1rem;
+  height: 60px; /* Fixed height for header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.app-header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.app-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.app-header a:hover {
+  text-decoration: underline;
+}
+
+main {
+  flex: 1; /* Ensures main content takes remaining space */
+}
+
+.app-footer {
+  background: #1a3c34;
+  color: white;
+  padding: 1rem;
+  height: 60px; /* Fixed height for footer */
+  text-align: center;
+}
+
+.app-footer p {
+  margin: 0;
+}
+
+.section-wrapper:not(:last-child)::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 1px;
+  background: #d3e3f7; /* Subtle divider */
+  margin: 2rem auto 0;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .section-wrapper {
+      margin: 1.5rem 0;
+  }
+
+  .section-wrapper:not(:last-child)::after {
+      margin: 1.5rem auto 0;
+  }
+}
